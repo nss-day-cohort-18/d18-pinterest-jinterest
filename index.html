@@ -7,7 +7,12 @@
 </head>
 <body ng-app="jInterest">
 
+	<div class="container">
 
+		<div ng-include="'partials/navbar.html'"></div>
+		<div ng-view></div>
+
+	</div>
 
 <!-- these are scripts you NEED for this to work -->
 <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
