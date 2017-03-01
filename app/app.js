@@ -45,7 +45,12 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/defaultLoginViewAllJins.html', 
         controller: 'getAllJinsCtrl',
         resolve: {isAuth}
-    });
+    }).
+    when('/jinterest/myJinList', {
+        templateUrl: 'partials/userJinList.html', 
+        controller: 'userJinsCtrl',
+        resolve: {isAuth}
+    });   
 /*
     when('/music/:songId', {
         templateUrl: 'template/SongDetail-template.html',
