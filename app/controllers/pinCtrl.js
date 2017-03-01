@@ -7,9 +7,9 @@ app.controller('pinCtrl', function($scope, $window, AuthFactory, ApiSearchFactor
 	$scope.searchImageString = '';
 
 	$scope.searchImages = function () {
-		ApiSearchFactory.bingImageSearch($scope.searchImageString).then(function (img) {
-			console.log(img.data);
-			$scope.imageResults = img.data;
+		ApiSearchFactory.bingImageSearch($scope.searchImageString).then(function (imgData) {
+			console.log(imgData);
+			$scope.imageResults = imgData;
 		});
 	};
 

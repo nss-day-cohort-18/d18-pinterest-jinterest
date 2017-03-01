@@ -34,13 +34,19 @@ app.config(function($routeProvider) {
     when('/jinterest/imgSearch', {
         templateUrl: 'partials/imgSearch.html',
         controller: 'pinCtrl',
-    });
-    /*
-    when('/music/addSong', {
-        templateUrl: 'template/SongForm-template.html',
-        controller: 'SongAddCtrl',
         resolve: {isAuth}
     }).
+    when('/jinterest/addNewPin', {
+        templateUrl: 'partials/addNewPin.html',
+        controller: 'newPinCtrl',
+        resolve: {isAuth}
+    }).
+    when('/jinterest/jinList', {
+        templateUrl: 'partials/defaultLoginViewAllJins.html', 
+        controller: 'getAllJinsCtrl',
+        resolve: {isAuth}
+    });
+/*
     when('/music/:songId', {
         templateUrl: 'template/SongDetail-template.html',
         controller: 'SongDetailCtrl',
