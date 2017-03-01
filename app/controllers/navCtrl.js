@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller('navCtrl', function($scope, $window, AuthFactory, FilterFactory) {
+app.controller('navCtrl', function($scope, $window, AuthFactory, FilterFactory, ApiSearchFactory) {
 	$scope.searchText = FilterFactory;
 	$scope.isLoggedIn = false;
 
