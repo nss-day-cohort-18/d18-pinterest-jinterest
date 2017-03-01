@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default" ng-controller="navCtrl">
+
+	<h1>jInterest</h1>
+
+	<br />
+
+	<a ng-show="isLoggedIn" href="#!/music/addSong">Link Here</a> <br />
+	<a ng-show="isLoggedIn" href="#!/music/list">Link Here</a> <br />
+	<a ng-show="isLoggedIn" href="#!/logout">Logout</a>
+	
+	<br /><br />
+
+	<div ng-show="isLoggedIn">
+		<input type="text" placeholder="Search jInterest" ng-model="searchText.search" id="searchbar">
+	</div>
+
+	<br /><br />
+
+</nav>
