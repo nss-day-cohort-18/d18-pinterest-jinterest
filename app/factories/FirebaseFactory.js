@@ -69,3 +69,4 @@ app.factory("FirebaseStorage", function(FBCreds, $q, $http, AuthFactory) {
     return {getAllJins, getUserJins, addNewJin, addNewBoard};
 
 });
+
