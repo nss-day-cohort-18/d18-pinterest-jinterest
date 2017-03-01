@@ -44,6 +44,7 @@ app.factory("FirebaseStorage", function(FBCreds, $q, $http, AuthFactory) {
             $http.post(`${FBCreds.databaseURL}/pins.json`,
                 JSON.stringify(newJin))
                 .then((ObjectFromFirebase) => {
+                    console.log('addNewJin called from FB Factory:', ObjectFromFirebase);
                     resolve(ObjectFromFirebase);
                 })
                 .catch((error)=>{
@@ -54,7 +55,7 @@ app.factory("FirebaseStorage", function(FBCreds, $q, $http, AuthFactory) {
 
     let addNewBoard = (newBoard) => {
         return $q((resolve, reject)=>{
-            $http.post(`${FBCreds.databaseURL}/bords.json`,
+            $http.post(`${FBCreds.databaseURL}/boards.json`,
                 JSON.stringify(newBoard))
                 .then((ObjectFromFirebase) => {
                     resolve(ObjectFromFirebase);
@@ -68,3 +69,4 @@ app.factory("FirebaseStorage", function(FBCreds, $q, $http, AuthFactory) {
     return {getAllJins, getUserJins, addNewJin, addNewBoard};
 
 });
+

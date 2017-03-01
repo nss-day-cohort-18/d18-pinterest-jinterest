@@ -46,7 +46,7 @@ app.controller('userCtrl', function ($scope, $window, AuthFactory) {
 	    .then( () => {
 	    	console.log("UserCtrl: user is loggedIn", $scope.isLoggedIn );
 	        $scope.isLoggedIn = true;
-	        $window.location.href = "#!/login";
+	        $window.location.href = "#!/jinterest/jinList";
 	    });
 	};
 
@@ -56,7 +56,7 @@ app.controller('userCtrl', function ($scope, $window, AuthFactory) {
 	    	console.log("logged in user: ", result.user.uid);
 	    	//Once logged in, go to another view
 	    	$scope.isLoggedIn = true;
-	    	$window.location.href = "#!/login";
+	    	$window.location.href = "#!/jinterest/jinList";
 	  	}).catch(function(error) {
 	    	console.log("error with google login", error);
 	  	});

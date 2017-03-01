@@ -10,8 +10,8 @@ app.factory('ApiSearchFactory', ($q, $http, FBCreds) => {
 
             }
             ).then(function (imageResults) {
-                /* ANYTHING TO DO HERE */
-                resolve (imageResults);
+                var imageResultsMassaged = imageResults.data.value;
+                resolve (imageResultsMassaged);
 
             }).catch(function (error) {
                 reject (error);
