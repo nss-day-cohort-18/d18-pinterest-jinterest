@@ -26,17 +26,16 @@ app.config(function($routeProvider) {
     when('/login', {
         templateUrl: 'partials/login.html',
         controller: 'userCtrl'
-    });
-/*)    }).
+    }).
     when('/logout', {
-        templateUrl: 'template/login.html',
-        controller: 'UserCtrl'
+        templateUrl: 'partials/login.html',
+        controller: 'userCtrl'
     }).
-    when('/music/list', {
-        templateUrl: 'template/SongList-template.html',
-        controller: 'SongListCtrl',
-        resolve: {isAuth}
-    }).
+    when('/jinterest/imgSearch', {
+        templateUrl: 'partials/imgSearch.html',
+        controller: 'pinCtrl',
+    });
+    /*
     when('/music/addSong', {
         templateUrl: 'template/SongForm-template.html',
         controller: 'SongAddCtrl',
