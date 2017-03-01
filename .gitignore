@@ -1,0 +1,8 @@
+### Grunt Stuff ###
+lib/node_modules
+
+### macOS ###
+*.DS_Store
+
+### data safety ### 
+app/values/fb-getter.js
