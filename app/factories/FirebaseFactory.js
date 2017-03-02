@@ -85,9 +85,9 @@ app.factory("FirebaseStorage", function(FBCreds, $q, $http, AuthFactory) {
 
     let getSingleJin = (jinId) => {
         return $q(function(resolve, reject){
-            $http.get(`${FBCreds.databaseURL}/jins/${jinId}.json`)
+            $http.get(`${FBCreds.databaseURL}/pins/${jinId}.json`)
             .then(function(jinObject){
-                resolve(jinObject.data);
+               resolve(jinObject.data);
             })
             .catch(function(error){
                 reject(error);
