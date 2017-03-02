@@ -107,6 +107,6 @@ app.factory("FirebaseStorage", function(FBCreds, $q, $http, AuthFactory) {
         });
     };
 
-    return {getAllJins, getUserJins, addNewJin, addNewBoard, getSingleBoard, getSingleJin};
+    return {getAllJins, getUserJins, addNewJin, addNewBoard, getSingleBoard, getSingleJin, getUserBoards};
 
 });

@@ -6,7 +6,7 @@ app.controller('newPinCtrl', function($scope, $location, AuthFactory, FirebaseSt
   
 	$scope.newPin = {
 		name: '',
-		imageId: '',
+		id: '',
 		thumbnailUrl: '',
 		url: '',
 		boardid: '',
