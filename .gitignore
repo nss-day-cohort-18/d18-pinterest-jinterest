@@ -4,5 +4,8 @@ lib/node_modules
 ### macOS ###
 *.DS_Store
 
-### data safety ### 
+### data safety ###
 app/values/
+
+
+lib/.sass-cache
