@@ -38,6 +38,24 @@ app.factory("FirebaseStorage", function(FBCreds, $q, $http, AuthFactory) {
         });
     };
 
+    let getUserBoards = (user) => {
+        let boards = [];
+        return $q((resolve, reject) => {
+            $http.get(`${FBCreds.databaseURL}/boards.json?orderBy="uid"&equalTo="${user}"`)
+            .then((boardObject) =>{
+                let boardCollection = boardObject.data;
+                Object.keys(boardCollection).forEach((key)=>{
+                    boardCollection[key].id = key;
+                    boards.push(boardCollection[key]);
+                });
+                resolve(boards);
+            })
+            .catch((error)=> {
+                reject(error);
+            });
+        });
+    };
+
     let addNewJin = (newJin) => {
         return $q((resolve, reject)=>{
             $http.post(`${FBCreds.databaseURL}/pins.json`,
@@ -65,7 +83,30 @@ app.factory("FirebaseStorage", function(FBCreds, $q, $http, AuthFactory) {
             });
     };
 
-    return {getAllJins, getUserJins, addNewJin, addNewBoard};
+    let getSingleJin = (jinId) => {
+        return $q(function(resolve, reject){
+            $http.get(`${FBCreds.databaseURL}/jins/${jinId}.json`)
+            .then(function(jinObject){
+                resolve(jinObject.data);
+            })
+            .catch(function(error){
+                reject(error);
+            });
+        });
+    };
+
+    let getSingleBoard = (boardId) => {
+        return $q(function(resolve, reject){
+            $http.get(`${FBCreds.databaseURL}/boards/${boardId}.json`)
+            .then(function(jinObject){
+                resolve(jinObject.data);
+            })
+            .catch(function(error){
+                reject(error);
+            });
+        });
+    };
+
+    return {getAllJins, getUserJins, addNewJin, addNewBoard, getSingleBoard, getSingleJin};
 
 });
-
