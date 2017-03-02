@@ -42,29 +42,24 @@ app.config(function($routeProvider) {
         resolve: {isAuth}
     }).
     when('/jinterest/jinList', {
-        templateUrl: 'partials/defaultLoginViewAllJins.html', 
+        templateUrl: 'partials/defaultLoginViewAllJins.html',
         controller: 'getAllJinsCtrl',
         resolve: {isAuth}
     }).
     when('/jinterest/myJinList', {
-        templateUrl: 'partials/userJinList.html', 
+        templateUrl: 'partials/userJinList.html',
         controller: 'userJinsCtrl',
         resolve: {isAuth}
-    });   
-/*
-    when('/music/:songId', {
-        templateUrl: 'template/SongDetail-template.html',
-        controller: 'SongDetailCtrl',
+    }).
+    when('/jinterest/addNewBoard', {
+        templateUrl: 'partials/newBoard.html',
+        controller: 'newBoardCtrl',
         resolve: {isAuth}
     }).
-    when('/music/:songId/edit', {
-        templateUrl: 'template/SongForm-template.html',
-        controller: 'SongEditCtrl',
-        resolve: {isAuth}
-    }); */
+    otherwise("/");
 });
 
-// Start Firebase Credentials
+
 app.run(($location, FBCreds) => {
     let creds = FBCreds;
     let authConfig = {
