@@ -21,7 +21,7 @@ app.controller('pinCtrl', function($scope, $location, AuthFactory, FirebaseStora
 			name: selectedImageProperties.name,
 			imageId: selectedImageProperties.imageId,
 			thumbnailUrl: selectedImageProperties.thumbnailUrl,
-			contentUrl: selectedImageProperties.contentUrl,
+			url: selectedImageProperties.contentUrl,
 			boardid: '',
 			uid: user
 		};

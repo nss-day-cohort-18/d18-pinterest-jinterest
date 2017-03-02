@@ -8,7 +8,7 @@ app.controller('newPinCtrl', function($scope, $location, AuthFactory, FirebaseSt
 		name: '',
 		imageId: '',
 		thumbnailUrl: '',
-		contentUrl: '',
+		url: '',
 		boardid: '',
 		uid: user
 	};
