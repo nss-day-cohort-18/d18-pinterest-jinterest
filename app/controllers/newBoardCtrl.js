@@ -6,6 +6,7 @@ app.controller('newBoardCtrl', function($scope, $location, AuthFactory, Firebase
 
 	$scope.newBoard = {
 		boardName: '',
+		id: '',
 		uid: user
 	};
 

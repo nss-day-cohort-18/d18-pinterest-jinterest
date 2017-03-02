@@ -3,8 +3,9 @@
 <div class="col-md-6">
 
 <div>
-<img src="{{selectedItem.url}}">
-	<!-- pin image goes here -->
+
+	<img src="{{selectedItem.url}}" id="{{selectedImage.id}}">
+
 </div>
 
 </div>
@@ -12,6 +13,7 @@
 <div>
 <h3>Jin to your Board</h3>
 	<ul ng-repeat="board in boards">
+
 	<!-- boards of user -->
 	<li ng-click="functionCall(board.id)">{{board.title}}</li>
 	</ul>

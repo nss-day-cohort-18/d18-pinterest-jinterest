@@ -52,15 +52,15 @@ app.config(function($routeProvider) {
         resolve: {isAuth}
 
     }).
-    when('/jinterest/myJinList/:jinId', {
-        templateUrl: 'partials/singlePinView.html',
-        controller: 'singlePinViewCtrl',
-        resolve:{isAuth}
-    }).
     when('/jinterest/addNewBoard', {
         templateUrl: 'partials/newBoard.html',
         controller: 'newBoardCtrl',
         resolve: {isAuth}
+    }).
+    when('/jinterest/:jinId', {
+        templateUrl: 'partials/singlePinView.html',
+        controller: 'singlePinViewCtrl',
+        resolve:{isAuth}
     }).
     otherwise("/");
 });
