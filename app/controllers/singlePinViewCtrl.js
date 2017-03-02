@@ -19,6 +19,7 @@ app.controller('singlePinViewCtrl', function($scope,$routeParams, AuthFactory, F
 
     $scope.addPinToBoard = function (boardId) {
        console.log('board is: ', boardId);
+        $scope.addJinToBoard.uid = user;
         $scope.addJinToBoard.boardid = boardId;
         console.log('WE ARE ADDING: ', $scope.addJinToBoard);
 
