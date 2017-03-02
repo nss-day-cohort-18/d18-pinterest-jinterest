@@ -50,6 +50,12 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/userJinList.html',
         controller: 'userJinsCtrl',
         resolve: {isAuth}
+
+    }).
+    when('/jinterest/myJinList/:jinId', {
+        templateUrl: 'partials/singlePinView.html',
+        controller: 'singlePinViewCtrl',
+        resolve:{isAuth}
     }).
     when('/jinterest/addNewBoard', {
         templateUrl: 'partials/newBoard.html',
