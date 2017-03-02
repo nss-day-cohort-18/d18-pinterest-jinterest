@@ -1,5 +1,8 @@
 .img_padding {
   border: 1px solid black;
-  margin: 5px; }
+  margin-bottom: 5px; }
+
+.eachImgResult {
+  margin-bottom: 20px; }
 
 /*# sourceMappingURL=main.css.map */
