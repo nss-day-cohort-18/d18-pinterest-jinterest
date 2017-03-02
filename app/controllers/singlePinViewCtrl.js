@@ -1,17 +1,21 @@
 'use strict';
 
-app.controller('singlePinViewCtrl', function($scope, AuthFactory, FirebaseStorage) {
+app.controller('singlePinViewCtrl', function($scope,$routeParams, AuthFactory, FirebaseStorage) {
+  
+	 console.log('test');
 
-// get single pin - getSingleJin - call 
-//FirebaseStorage.getSingleJin
-// FirebaseStorage.getUserBoards
-// get user's boards - getUserBoards - call
+    $scope.allJins = [];
+    console.log($routeParams.jinId);
 
-// copy get single pin - {{board.id}}
+  	FirebaseStorage.getAllJins().then(function(allJins) {
+         // console.log(allJins);
+	  		  $scope.allJins = allJins;
 
-
-// addPinToBoard call - addNewJin
-	// we're creating a new 
+          $scope.selectedItem = $scope.allJins.filter(function(aJin) {
+    	   // console.log(aJin);
+          return aJin.id === $routeParams.jinId;
+    })[0];
+  });
 
 
 

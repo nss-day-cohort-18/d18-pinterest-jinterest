@@ -4,8 +4,12 @@
   <div class="clearfix eachImgResult" ng-if="$index % 3 == 0"></div>
     <div class="col-sm-4">
 
-        <img src="{{jin.url}}" class="img_padding" width="200" height="200">
+		<a ng-href="#!/jinterest/{{jin.id}}">
+	        <img src="{{jin.url}}" class="img_padding" width="200" height="200">
+	    </a>
 
+        <p>{{jin.name}}</p>
+        <p>User: {{jin.uid}}</p>
     
     </div>
 
