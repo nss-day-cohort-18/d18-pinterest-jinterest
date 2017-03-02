@@ -4,18 +4,18 @@
 
 <div>
 
-	<img src="{{selectedItem.url}}" id="{{selectedImage.id}}">
+	<img src="{{selectedItem.url}}" id="{{selectedImage.id}}" width="400" height="400">
 
 </div>
 
 </div>
+
+
 <div class="col-md-6">
 <div>
 <h3>Jin to your Board</h3>
 	<ul ng-repeat="board in boards">
-
-	<!-- boards of user -->
-	<li ng-click="functionCall(board.id)">{{board.title}}</li>
+		<li><a ng-click="addPinToBoard(board.id)">{{board.boardName}}</a></li>
 	</ul>
 </div>
 

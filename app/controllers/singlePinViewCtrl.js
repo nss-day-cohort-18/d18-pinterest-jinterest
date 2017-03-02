@@ -2,21 +2,32 @@
 
 app.controller('singlePinViewCtrl', function($scope,$routeParams, AuthFactory, FirebaseStorage) {
   
-	 console.log('test');
+    let user = AuthFactory.getUser();
 
-    $scope.allJins = [];
-    console.log($routeParams.jinId);
+    $scope.addJinToBoard = {};
 
-  	FirebaseStorage.getAllJins().then(function(allJins) {
-         // console.log(allJins);
-	  		  $scope.allJins = allJins;
+    FirebaseStorage.getSingleJin($routeParams.jinId).then(function successCallback(response){
+        console.log('getSingleItemResponse', response);
+        $scope.selectedItem = response;
+        $scope.addJinToBoard = response;
+    });
 
-          $scope.selectedItem = $scope.allJins.filter(function(aJin) {
-    	   // console.log(aJin);
-          return aJin.id === $routeParams.jinId;
-    })[0];
-  });
+    FirebaseStorage.getUserBoards(user).then(function(allBoards) {
+      console.log(allBoards);
+      $scope.boards = allBoards;
+    });
 
+    $scope.addPinToBoard = function (boardId) {
+       console.log('board is: ', boardId);
+        $scope.addJinToBoard.boardid = boardId;
+        console.log('WE ARE ADDING: ', $scope.addJinToBoard);
+
+        FirebaseStorage.addNewJin($scope.addJinToBoard).then(function (comeback){
+          console.log(comeback);
+        });
+       
+    };
 
 
 });
+
