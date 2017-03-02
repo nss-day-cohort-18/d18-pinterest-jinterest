@@ -6,7 +6,9 @@ app.controller('newPinCtrl', function($scope, $location, AuthFactory, FirebaseSt
   
 	$scope.newPin = {
 		name: '',
-		url: '',
+		imageId: '',
+		thumbnailUrl: '',
+		contentUrl: '',
 		boardid: '',
 		uid: user
 	};
@@ -17,7 +19,7 @@ app.controller('newPinCtrl', function($scope, $location, AuthFactory, FirebaseSt
         	$location.url("jinterest/jinList");
         	console.log(response);
       	});
-      	console.log('You added a pin: ', $scope.newPin);
+      	console.log('You manually added a pin: ', $scope.newPin);
       	$scope.newPin = {};
 	};
 

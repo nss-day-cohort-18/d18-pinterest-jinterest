@@ -1,16 +1,25 @@
 <input type="text" ng-model="searchImageString"/>
 <button ng-click="searchImages()">submit</button>
 
+<br /><br />
+
 <div class="row">
 	<div ng-repeat="image in imageResults">
-	<div class="clearfix" ng-if="$index % 3 == 0"></div>
-		<div class="col-sm-4">
+
+
+	<div class="clearfix eachImgResult" ng-if="$index % 3 == 0"></div>
+	<div class="col-sm-4">
 
 			<a href="{{image.contentUrl}}" target="_top">
-				<img src="{{image.thumbnailUrl}}" id="{{image.imageId}}" class="img_padding">
+				<img src="{{image.thumbnailUrl}}&w=200&h=200&c=7" id="{{image.imageId}}" class="img_padding">
 			</a>
 
-		</div>
+			<br />
+
+			<a ng-click="addSelectedImageProp(image)">Add Image to jInterest</a>
 
 	</div>
+	</div>
+
+
 </div>

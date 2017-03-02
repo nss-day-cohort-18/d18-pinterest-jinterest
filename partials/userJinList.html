@@ -1,11 +1,14 @@
 <div class="row">
-  <div ng-repeat="jin in userJins">
-  <div class="clearfix" ng-if="$index % 3 == 0"></div>
-    <div class="col-sm-4">
+ 
+ 	<div ng-repeat="jin in userJins">
+  	
+  		<div class="clearfix" ng-if="$index % 3 == 0"></div>
+    	<div class="col-sm-4">
 
-        <img src="{{jin.url}}" class="img_padding" width="300" height="300">
+        	<img src="{{jin.contentUrl}}" class="img_padding" width="300" height="300">
 
-    </div>
-
+    	</div>
+    	
   </div>
+
 </div>

@@ -56,7 +56,6 @@ app.factory("FirebaseStorage", function(FBCreds, $q, $http, AuthFactory) {
         });
     };
 
-
     let addNewJin = (newJin) => {
         return $q((resolve, reject)=>{
             $http.post(`${FBCreds.databaseURL}/pins.json`,
