@@ -3,6 +3,8 @@
 app.controller('singlePinViewCtrl', function($scope,$routeParams, AuthFactory, FirebaseStorage, $window) {
 
     let user = AuthFactory.getUser();
+    let userEmail = AuthFactory.getUserEmail();
+    let displayName = AuthFactory.getUserDisplayName();
 
     $scope.addJinToBoard = {};
 
@@ -13,7 +15,7 @@ app.controller('singlePinViewCtrl', function($scope,$routeParams, AuthFactory, F
     });
 
     FirebaseStorage.getUserBoards(user).then(function(allBoards) {
-      console.log(allBoards);
+      console.log('Info on Users Boards:', allBoards);
       $scope.boards = allBoards;
     });
 
@@ -21,12 +23,13 @@ app.controller('singlePinViewCtrl', function($scope,$routeParams, AuthFactory, F
        console.log('board is: ', boardId);
         $scope.addJinToBoard.uid = user;
         $scope.addJinToBoard.boardid = boardId;
+        $scope.addJinToBoard.email = userEmail;
+        $scope.addJinToBoard.displayName = displayName;
 
         console.log('Adding Jin to board: ', $scope.addJinToBoard);
       
         FirebaseStorage.addNewJin($scope.addJinToBoard).then(function (comeback){
             $window.alert("You sucessfully added a pin to your board!");
-            console.log(comeback);
         });
 
     };
