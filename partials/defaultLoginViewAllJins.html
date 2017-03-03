@@ -1,6 +1,6 @@
 
 <div class="row">
-  <div ng-repeat="jin in allUserJins">
+  <div ng-repeat="jin in allUserJins | noBoardId">
   <div class="clearfix eachImgResult" ng-if="$index % 3 == 0"></div>
     <div class="col-sm-4">
 
@@ -9,13 +9,13 @@
 	    </a>
 
         <p>{{jin.name}}</p>
-        
+
         <p ng-if="jin.displayName !=null">
         <b>Name:</b> {{jin.displayName}}</p>
 
         <p ng-if="jin.email == undefined">
         <b>User:</b> {{jin.uid}}</p>
-        
+
         <p ng-if="jin.email != null">
         <b>User:</b> {{jin.email}}</p>
 
