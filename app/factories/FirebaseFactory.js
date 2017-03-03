@@ -61,7 +61,7 @@ app.factory("FirebaseStorage", function(FBCreds, $q, $http, AuthFactory) {
             $http.post(`${FBCreds.databaseURL}/pins.json`,
                 JSON.stringify(newJin))
                 .then((ObjectFromFirebase) => {
-                    console.log('addNewJin called from FB Factory:', ObjectFromFirebase);
+                    // console.log('addNewJin called from FB Factory:', ObjectFromFirebase);
                     resolve(ObjectFromFirebase);
                 })
                 .catch((error)=>{
@@ -95,6 +95,16 @@ app.factory("FirebaseStorage", function(FBCreds, $q, $http, AuthFactory) {
         });
     };
 
+    let deleteUserJin = (jinId) => {
+        return $q((resolve, reject) => {
+            $http.delete(`${FBCreds.databaseURL}/pins/${jinId}.json`)
+            .then((ObjectFromFirebase) => {
+                resolve(ObjectFromFirebase);
+            });
+        });
+    };
+
+
     let getSingleBoard = (boardId) => {
         return $q(function(resolve, reject){
             $http.get(`${FBCreds.databaseURL}/boards/${boardId}.json`)
@@ -107,6 +117,14 @@ app.factory("FirebaseStorage", function(FBCreds, $q, $http, AuthFactory) {
         });
     };
 
-    return {getAllJins, getUserJins, addNewJin, addNewBoard, getSingleBoard, getSingleJin, getUserBoards};
+    return {getAllJins, 
+        getUserJins, 
+        addNewJin, 
+        addNewBoard, 
+        getSingleBoard, 
+        getSingleJin, 
+        getUserBoards, 
+        deleteUserJin 
+    };
 
 });

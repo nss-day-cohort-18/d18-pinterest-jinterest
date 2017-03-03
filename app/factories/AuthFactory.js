@@ -25,7 +25,7 @@ app.factory('AuthFactory', function() {
 				if (user){
 					currentUser = user.uid;
 					currentUserEmail = user.email;
-					currentUserDisplayName = user.displayname;
+					currentUserDisplayName = user.displayName;
 					resolve(true);
 				} else {
 					resolve(false);

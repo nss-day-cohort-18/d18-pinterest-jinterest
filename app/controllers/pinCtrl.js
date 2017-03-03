@@ -8,7 +8,7 @@ app.controller('pinCtrl', function($scope, $location, AuthFactory, FirebaseStora
 
 	$scope.searchImages = function () {
 		ApiSearchFactory.bingImageSearch($scope.searchImageString).then(function (imgData) {
-			console.log(imgData);
+			// console.log('Data returned from Bing: ', imgData);
 			$scope.imageResults = imgData;
 		});
 	};
@@ -16,7 +16,11 @@ app.controller('pinCtrl', function($scope, $location, AuthFactory, FirebaseStora
 	$scope.addSelectedImageProp = function (selectedImageProperties) {
 
 		let user = AuthFactory.getUser();
+		let userEmail = AuthFactory.getUserEmail();
+		let displayName = AuthFactory.getUserDisplayName();
   
+		console.log(displayName);
+
 		$scope.imgPin = {
 			name: selectedImageProperties.name,
 			bingId: selectedImageProperties.imageId,
@@ -24,14 +28,16 @@ app.controller('pinCtrl', function($scope, $location, AuthFactory, FirebaseStora
 			thumbnailUrl: selectedImageProperties.thumbnailUrl,
 			url: selectedImageProperties.contentUrl,
 			boardid: '',
-			uid: user
+			uid: user,
+			email: userEmail,
+			displayName: displayName
 		};
 
       	FirebaseStorage.addNewJin($scope.imgPin).then(function(response) {
         	$location.url("jinterest/jinList");
-        	console.log(response);
+//        	console.log(response);
       	});
-      	console.log('You added a pin from BING: ', $scope.imgPin);
+      	console.log('You added a jin from Bing: ', $scope.imgPin);
       	$scope.imgPin = {};
 	
 	};

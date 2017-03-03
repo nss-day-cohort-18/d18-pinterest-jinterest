@@ -8,7 +8,8 @@ app.controller('userCtrl', function ($scope, $window, AuthFactory) {
 
 	$scope.account = {
 		email: '',
-		password: ''
+		password: '',
+		displayName: ''
 	};
 
 	$scope.logout = () => {
@@ -30,6 +31,7 @@ app.controller('userCtrl', function ($scope, $window, AuthFactory) {
 	$scope.register = () => {
     	console.log("you clicked register");
 	    AuthFactory.createUser({
+	      displayName: $scope.account.displayName,
 	      email: $scope.account.email,
 	      password: $scope.account.password
 	    }).then((userData) => {

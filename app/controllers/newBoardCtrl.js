@@ -14,7 +14,7 @@ app.controller('newBoardCtrl', function($scope, $location, AuthFactory, Firebase
       	FirebaseStorage.addNewBoard($scope.newBoard).then(function(response) {
         	$location.url("jinterest/jinList");
       	});
-      	console.log('You added a board: ', $scope.newBoard);
+      	console.log('You added a new board: ', $scope.newBoard);
       	$scope.newBoard = {};
 	};
 

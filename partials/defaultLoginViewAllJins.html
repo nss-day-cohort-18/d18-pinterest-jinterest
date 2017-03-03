@@ -9,8 +9,16 @@
 	    </a>
 
         <p>{{jin.name}}</p>
-        <p>User: {{jin.uid}}</p>
-    
+        
+        <p ng-if="jin.displayName !=null">
+        <b>Name:</b> {{jin.displayName}}</p>
+
+        <p ng-if="jin.email == undefined">
+        <b>User:</b> {{jin.uid}}</p>
+        
+        <p ng-if="jin.email != null">
+        <b>User:</b> {{jin.email}}</p>
+
     </div>
 
   </div>
