@@ -31,12 +31,15 @@ body {
   padding-top: 30px; }
 
 .pants {
-  background-color: #9A918B;
-  color: white;
+  background-color: lightblue;
+  color: white !important;
   margin-bottom: 30px;
   border-color: lightgrey;
   border-style: solid;
   border-width: 1px; }
+
+.whitePants ul a {
+  color: white !important; }
 
 .eachImgResult {
   margin-bottom: 20px; }
