@@ -2,6 +2,18 @@
 
 var app = angular.module('jInterest', ["ngRoute"]);
 
+app.filter('noBoardId', function() {
+  return function(allUserJins) {
+    var out = [];
+    angular.forEach(allUserJins, function(jin) {
+      if (jin.boardid === '') {
+        out.push(jin);
+      }
+  });
+    return out;
+};
+});
+
 //used to authenticate user when navigating to other views
 let isAuth = (AuthFactory) => new Promise ( (resolve, reject) => {
     AuthFactory.isAuthenticated()
