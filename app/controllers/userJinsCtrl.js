@@ -6,20 +6,25 @@ app.controller('userJinsCtrl', function ($scope, AuthFactory, FirebaseStorage, F
     let user = AuthFactory.getUser();
 
     FirebaseStorage.getUserJins(user).then(function (userJinList) {
-    	// console.log(userJinList);
+    	console.log(userJinList);
     	$scope.userJins = userJinList;
     });
-
-  //   $scope.testFunction = () => {
-  //   	const avatar_url = 'https://avatars3.githubusercontent.com/u/USER_ID';
- 
-		// console.image(avatar_url);
-  //   };
 
     FirebaseStorage.getUserBoards(user).then( function (userBoardList) {
     	// console.log("userBoardList", userBoardList);
     	console.image("http://i.imgur.com/oGiMR.gif");
     	$scope.userBoards = userBoardList;
     });
+
+
+    $scope.itemDelete = function (jinId) {
+    console.log('deleting Jin ', jinId);
+    FirebaseStorage.deleteUserJin(jinId).then(function(response){
+      FirebaseStorage.getUserJins(user).then(function(userJinList){
+      $scope.userJins = userJinList;
+            });
+        });
+    };
+
 
 });

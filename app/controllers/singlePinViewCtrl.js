@@ -21,7 +21,9 @@ app.controller('singlePinViewCtrl', function($scope,$routeParams, AuthFactory, F
        console.log('board is: ', boardId);
         $scope.addJinToBoard.uid = user;
         $scope.addJinToBoard.boardid = boardId;
-        console.log('WE ARE ADDING: ', $scope.addJinToBoard);
+
+        console.log('Adding Jin to board: ', $scope.addJinToBoard);
+      
         FirebaseStorage.addNewJin($scope.addJinToBoard).then(function (comeback){
             $window.alert("You sucessfully added a pin to your board!");
             console.log(comeback);
