@@ -1,7 +1,7 @@
 'use strict';
 
-app.controller('singlePinViewCtrl', function($scope,$routeParams, AuthFactory, FirebaseStorage) {
-  
+app.controller('singlePinViewCtrl', function($scope,$routeParams, AuthFactory, FirebaseStorage, $window) {
+
     let user = AuthFactory.getUser();
 
     $scope.addJinToBoard = {};
@@ -22,13 +22,12 @@ app.controller('singlePinViewCtrl', function($scope,$routeParams, AuthFactory, F
         $scope.addJinToBoard.uid = user;
         $scope.addJinToBoard.boardid = boardId;
         console.log('WE ARE ADDING: ', $scope.addJinToBoard);
-
         FirebaseStorage.addNewJin($scope.addJinToBoard).then(function (comeback){
-          console.log(comeback);
+            $window.alert("You sucessfully added a pin to your board!");
+            console.log(comeback);
         });
-       
+
     };
 
 
 });
-
