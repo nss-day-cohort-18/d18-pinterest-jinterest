@@ -6,7 +6,7 @@ app.controller('userJinsCtrl', function ($scope, AuthFactory, FirebaseStorage, F
     let user = AuthFactory.getUser();
 
     FirebaseStorage.getUserJins(user).then(function (userJinList) {
-    	console.log(userJinList);
+    	// console.log(userJinList);
     	$scope.userJins = userJinList;
     });
 
@@ -17,7 +17,8 @@ app.controller('userJinsCtrl', function ($scope, AuthFactory, FirebaseStorage, F
   //   };
 
     FirebaseStorage.getUserBoards(user).then( function (userBoardList) {
-    	console.log("userBoardList", userBoardList);
+    	// console.log("userBoardList", userBoardList);
+    	console.image("http://i.imgur.com/oGiMR.gif");
     	$scope.userBoards = userBoardList;
     });
 
