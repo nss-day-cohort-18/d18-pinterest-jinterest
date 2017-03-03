@@ -4,14 +4,34 @@
 	<meta charset="utf-8">
 	<title>Jinterest</title>
 	<link rel="stylesheet" type="text/css" href="lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css"
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body ng-app="jInterest">
 
-	<div class="container">
+<div class="container">
 
-		<div ng-include="'partials/navbar.html'"></div>
-		<div ng-view></div>
+		<!-- <div ng-include="'partials/navbar.html'"></div> -->
+<nav class="navbar navbar-fixed-top pants" data-spy="affix" data-offset-top="1px" ng-controller="navCtrl">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">jInterest</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+		<li ng-show="isLoggedIn"><a ng-href="#!/jinterest/jinList">View All Jins</a></li>
+	  	<li ng-show="isLoggedIn"><a ng-href="#!/jinterest/imgSearch">Search Images</a></li>
+	  	<li ng-show="isLoggedIn"><a ng-href="#!/jinterest/addNewPin">Add New Jin</a></li>
+	 	<li ng-show="isLoggedIn"><a ng-href="#!/jinterest/addNewBoard">Add New Board</a></li>
+	  	<li ng-show="isLoggedIn"><a ng-href="#!/jinterest/myJinList">My Jin List </a></li>
+	  	<li ng-show="isLoggedIn"><a ng-href="#!/logout">Logout</a></li>
+		<li ng-show="!isLoggedIn"><a ng-href="#!/login">LogIn</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+		<div class="container-fluid partialView" ng-view ></div>
 
 	</div>
 
