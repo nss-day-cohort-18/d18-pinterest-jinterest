@@ -1,6 +1,54 @@
 .img_padding {
-	border: 1px solid black;
+	padding: 5px;
+	border-radius: 10px;
 	margin-bottom: 5px;
+
+
+}
+body {
+	padding-top: 5px;
+}
+
+.cardStyle {
+	opacity: 1;
+	margin: 2.5px;
+	border-radius: 15px;
+	text-align: center;
+	padding-bottom: 5px;
+	height: 400px; 
+	
+	
+
+
+}
+
+.cardStyle:hover {
+	opacity: .8;
+	background-color: lightgrey;
+}
+
+.partialView {
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.affix {
+      top: 0;
+      width: 100%;
+  }
+
+.affix + .container-fluid {
+      padding-top: 30px;
+  }
+
+.pants {
+	background-color: #9A918B;
+	color: white;
+	margin-bottom: 30px;
+	border-color: lightgrey;
+	border-style: solid;
+	border-width: 1px
 }
 
 .eachImgResult {
