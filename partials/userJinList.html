@@ -1,14 +1,14 @@
 <div ng-include="'partials/sideNav.html'"></div>
-
 <div class="row">
  
- 	<div ng-repeat="jin in userJins">
+ 	<div ng-repeat="jin in userJins | filter: filterBoard">
   	
   		<div class="clearfix eachImgResult" ng-if="$index % 3 == 0"></div>
     	<div class="col-sm-4">
 
         	<img src="{{jin.url}}" class="img_padding" width="200" height="200">
         	<p>{{jin.name}}</p>
+        	<p>{{jin.boardid}}</p>
         	<p><a ng-click="itemDelete(jin.id)">Delete Jin</a></p>
 
     	</div>

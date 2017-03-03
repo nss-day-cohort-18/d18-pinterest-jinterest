@@ -6,14 +6,15 @@ app.controller('userJinsCtrl', function ($scope, AuthFactory, FirebaseStorage, F
     let user = AuthFactory.getUser();
 
     FirebaseStorage.getUserJins(user).then(function (userJinList) {
-    	console.log(userJinList);
+    	console.log("userJinList", userJinList);
     	$scope.userJins = userJinList;
     });
 
     FirebaseStorage.getUserBoards(user).then( function (userBoardList) {
-    	// console.log("userBoardList", userBoardList);
-    	console.image("http://i.imgur.com/oGiMR.gif");
+    	console.log("userBoardList", userBoardList);
+    	// console.image("http://i.imgur.com/oGiMR.gif");
     	$scope.userBoards = userBoardList;
+
     });
 
 
@@ -26,5 +27,11 @@ app.controller('userJinsCtrl', function ($scope, AuthFactory, FirebaseStorage, F
         });
     };
 
+    $scope.displayUserBoard = (board, boardName) => {
+    	console.log("board!", board);
+        $scope.filterBoard = board;
+        console.log("your board!", $scope.filterBoard);
+        $scope.currentBoard = boardName;
+    };
 
 });
