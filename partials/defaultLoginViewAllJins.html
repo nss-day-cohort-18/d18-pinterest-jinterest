@@ -1,14 +1,19 @@
 
+
 <div class="row">
   <div ng-repeat="jin in allUserJins | noBoardId">
-  <div class="clearfix eachImgResult" ng-if="$index % 3 == 0"></div>
-    <div class="col-sm-4">
 
+  <div class="clearfix eachImgResult" ng-if="$index % 3 == 0"></div>
+    <div class="col-sm-4" height="400">
+    
+    <div class="cardStyle" width="300">
 		<a ng-href="#!/jinterest/{{jin.id}}">
 	        <img src="{{jin.url}}" class="img_padding" width="200" height="200">
 	    </a>
 
+
         <p>{{jin.name}}</p>
+
 
         <p ng-if="jin.displayName !=null">
         <b>Name:</b> {{jin.displayName}}</p>
@@ -20,6 +25,6 @@
         <b>User:</b> {{jin.email}}</p>
 
     </div>
-
+</div>
   </div>
 </div>
